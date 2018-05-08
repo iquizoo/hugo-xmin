@@ -14,7 +14,7 @@
     <th>创建日期</th>
     <th>最后修改日期</th>
   </tr>
-  {{ range (where .Data.Pages "Section" "!=" "") }}
+  {{ range (where .Data.Pages "Section" "!=" "").ByParam "code" }}
   <tr>
     <td>{{ .Params.code }}</td>
     <td><a href="{{ .URL }}">{{ .Title }}</a></td>
